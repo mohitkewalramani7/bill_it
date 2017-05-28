@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="apps.mohit.billit.Activities.AddBill">
+
+    <TextView
+        android:text="@string/add_bill_menu_heading"
+        android:textSize="18pt"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nameEntry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/nameEntry"
+        android:layout_toStartOf="@+id/nameEntry"
+        android:text="Payment To:"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/nameEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amountEntry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/amountEntry"
+        android:layout_toStartOf="@+id/amountEntry"
+        android:text="Bill Amount"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/amountEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="32dp"
+        android:text="Date Due"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/dateEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignEnd="@+id/amountEntry"
+        android:layout_alignLeft="@+id/amountEntry"
+        android:layout_alignRight="@+id/amountEntry"
+        android:layout_alignStart="@+id/amountEntry"
+        android:ems="10"
+        android:onClick="chooseDueDate"
+        android:text="Choose Date" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/choosenDate"
+        android:layout_toLeftOf="@+id/choosenDate"
+        android:layout_toStartOf="@+id/choosenDate"
+        android:text="Notification Choice"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Bill"
+        android:id="@+id/button"
+        android:onClick="saveBill"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/notificationChoiceRadioGroup"
+        android:layout_alignStart="@+id/notificationChoiceRadioGroup" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Entry"
+        android:id="@+id/button2"
+        android:onClick="cancelEntry"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <RadioGroup
+        android:id="@+id/notificationChoiceRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80pt"
+        android:layout_marginTop="110pt"
+        android:paddingTop="5pt">
+
+        <RadioButton
+            android:id="@+id/noNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView5"
+            android:layout_alignLeft="@+id/notificationChoiceRadioGroup"
+            android:layout_alignStart="@+id/notificationChoiceRadioGroup"
+            android:checked="true"
+            android:text="No Notifications" />
+
+        <RadioButton
+            android:id="@+id/threeDayNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/noNotifications"
+            android:layout_alignStart="@+id/noNotifications"
+            android:layout_below="@+id/noNotifications"
+            android:checked="false"
+            android:text="3 Days Before Due" />
+
+        <RadioButton
+            android:id="@+id/fiveDayNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/threeDayNotifications"
+            android:layout_alignStart="@+id/threeDayNotifications"
+            android:layout_below="@+id/threeDayNotifications"
+            android:checked="false"
+            android:text="5 Days Before Due" />
+
+        <RadioButton
+            android:id="@+id/oneWeekBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/fiveDayNotifications"
+            android:layout_alignStart="@+id/fiveDayNotifications"
+            android:layout_below="@+id/fiveDayNotifications"
+            android:checked="false"
+            android:text="1 Week Before Due" />
+
+        <RadioButton
+            android:id="@+id/twoWeekBefore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/oneWeekBefore"
+            android:layout_alignStart="@+id/oneWeekBefore"
+            android:layout_below="@+id/oneWeekBefore"
+            android:checked="false"
+            android:text="2 Weeks Before Due" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/choosenDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/dateEntry"
+        android:layout_alignLeft="@+id/dateEntry"
+        android:layout_alignRight="@+id/dateEntry"
+        android:layout_alignStart="@+id/dateEntry"
+        android:layout_below="@+id/dateEntry"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+
+
+</RelativeLayout>

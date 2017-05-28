@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bill It</string>
+    <string name="welcome_screen">Welcome to Bill It</string>
+    <string name="add_new_bill">Add a Bill</string>
+    <string name="bills_due_this_week">Bills Due This Week</string>
+    <string name="bills_due_this_month">Bills Due This Month</string>
+    <string name="view_all_bills">View All Bills</string>
+    <string name="about_us">Developed By \n"\u00a9" Mohit Kewalramani Development Studios</string>
+
+    <string name="add_bill_menu_heading">Add A Bill</string>
+
+    <string name="all_bills_list_heading">All Entered Bills</string>
+    <string name="edit_bill_menu_heading">Edit A Bill</string>
+</resources>
